@@ -1,0 +1,22 @@
+SQL>  create table sturegistration(name varchar(15),pin_no varchar(10),father_name varchar(15),tenth_ht_no number(12),tenth_marksper number(15),polycet_ht_no number(10),religion  varchar(10),caste varchar(10),gender varchar(10),dob Date,doj Date,aadhar_no number(15),admission number(10),contact_no number(12),email_id varchar(20),fee_amount number(10),PRIMARY KEY(pin_no));
+
+Table created.
+
+SQL>  create table registration(name varchar(30),pin_no varchar(15),father_name varchar(30),tenth_ht_no number(12),tenth_percentage number(3),polycet_ht number(15),religion  varchar(10),caste varchar(5),gender varchar(1),dob Date,date_of_join Date,aadhar_no number(15),admission number(10),contact_no number(12),email_id varchar(30),fee_amount number(10),PRIMARY KEY(pin_no));
+
+Table created.
+
+SQL>  create table address(pin_no varchar(15) references registration(pin_no),door_no varchar(20),street varchar(30),village varchar(30),town varchar(30),district varchar(30),state varchar(10);
+ create table address(pin_no varchar(15) references registration(pin_no),door_no varchar(20),street varchar(30),village varchar(30),town varchar(30),district varchar(30),state varchar(10)
+                                                                                                                                                                                          *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL>  create table address(pin_no varchar(15) references registration(pin_no),door_no varchar(20),street varchar(30),village varchar(30),town varchar(30),district varchar(30),state varchar(10),pincode number(10));
+
+Table created.
+
+SQL>  create table marks(pin_no varchar(15) references registration(pin_no),first_year number(3),first_status varchar(1),third_sem number(3),third_status varchar(1),fourth_sem number(3),fourth_status varchar(1),fifth_sem number(3),fifth_status varchar(1),sixth_sem number(3),sixth_status varchar(1),OD varchar(1));
+
+Table created.
